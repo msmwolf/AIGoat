@@ -343,7 +343,7 @@ resource "aws_security_group" "sagemaker_recommendation_sg" {
 # Fixed: Removed deprecated platform_identifier
 resource "aws_sagemaker_notebook_instance" "recommendation_notebook" {
   name                         = "recommendation-search-${random_string.suffix.result}"
-  instance_type                = "ml.t2.medium"
+  instance_type                = "ml.t2.micro"
   role_arn                     = aws_iam_role.sagemaker_recommendation_execution_role.arn
   lifecycle_config_name        = aws_sagemaker_notebook_instance_lifecycle_configuration.sagemaker_recommendation_lifecycle_config.name
   direct_internet_access       = "Enabled"
