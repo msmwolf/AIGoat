@@ -238,7 +238,7 @@ resource "aws_security_group" "sagemaker_images_sg" {
 # Fixed: Removed deprecated platform_identifier
 resource "aws_sagemaker_notebook_instance" "similar_images_notebook" {
   name                         = "similar-images-search-${random_string.suffix.result}"
-  instance_type                = "ml.t2.micro"
+  instance_type                = "ml.t3.medium"
   role_arn                     = aws_iam_role.sagemaker_similar_images_execution_role.arn
   lifecycle_config_name        = aws_sagemaker_notebook_instance_lifecycle_configuration.sagemaker_images_lifecycle_config.name
   direct_internet_access       = "Enabled"
