@@ -210,7 +210,7 @@ resource "aws_security_group" "sagemaker_sg" {
 
 resource "aws_sagemaker_notebook_instance" "comments_filter" {
   name                         = "comments-filter-${random_string.suffix.result}"
-  instance_type                = "ml.t2.micro"
+  instance_type                = "ml.t3.micro"
   role_arn                     = aws_iam_role.sagemaker_execution_role.arn
   lifecycle_config_name        = aws_sagemaker_notebook_instance_lifecycle_configuration.sagemaker_lifecycle_config.name
   direct_internet_access       = "Enabled"
